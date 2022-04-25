@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+  <header id="cabecera">
+    <div class="caja">
+      <a href=""><img src="./assets/pokemons.png" alt="pokemons" /></a>
+    </div>
+    <div id="logo" [@dimBox]="isDimmed ? 'dimmed' : 'notDimmed'">
+      <img
+        [src]="rutaLogo"
+        alt="logoPokeball"
+        (mouseover)="rutaLogo = './assets/pokeballO.png'"
+        (mouseout)="rutaLogo = './assets/pokeballC.png'"
+      />
+    </div>
+    <div class="caja">
+      <a href=""><img src="./assets/teams.png" alt="teams" /></a>
+    </div>
+  </header>
+</html>
