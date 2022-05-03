@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <div class="pokemons-container">
+    <div class="pokemons__header">
+      <div class="pokemons__header-search">
+        <form action="" id="searchPokemon">
+          <input type="text" id="pokemon" />
+          <button>
+            <img src="./assets/buscar.png" alt="pokeball" />
+          </button>
+        </form>
+      </div>
+
+      <div class="pokemons__header-aline">
+        <div class="arrow-left" id="arrow-left"></div>
+        <div class="order" id="textGen">Gen {{ this.generacion }}</div>
+        <div class="arrow-right" id="arrow-right"></div>
+      </div>
+    </div>
+
+    <div class="pokemons__pokemon-content" id="pokemonContent">
+      <div class="pokemon">
+        <div class="img-container">
+          <img src="{{ pokemon.imagen }}" alt="{{ pokemon.nombre }}" />
+        </div>
+        <div class="info">
+          <span class="number"></span>
+          <h3 class="name"></h3>
+          <small class="type">Tipo: <span></span></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
