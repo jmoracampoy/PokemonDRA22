@@ -27,28 +27,31 @@ export class PokemonsComponent implements OnInit {
     };
 
    tipos_pokemon = Object.keys(this.colors);
-   generacion:number = 1;
-   pokemon= {} as Pokemon;
-   pokemons = {} as Pokemon[];
+   pokemonGen = {
+    1:[1, 151],
+    2:[152,251],
+    3:[252, 386]
+  };
+
+   numeroGen = 1;
+   generacion:number[] = this.pokemonGen[1];
+   inicioGeneracion:number = this.generacion[0];
+   finGeneracion: number = this.generacion[1];
+   pokemons:any[] = [];
 
 
   constructor(private pokemonService:PokemonService) { }
 
   ngOnInit(): void {
-    this.getPokemon(10);
+    this.getPokemon();
   }
 
-  getPokemon(id:number){
-  this.pokemonService.getPokemon(id).subscribe(response =>{
-    this.pokemon.idPokedex = id;
-    this.pokemon.nombre = response.forms[0].name;
-    this.pokemon.imagen = response.sprites.front_default;
-    response.types.forEach((tipo: any) => {
-      this.pokemon.tipo.push(tipo.type.name.toString());
-    });
-
-  });
-
+  async getPokemon(){
+    for(let id = this.inicioGeneracion;id<=this.finGeneracion;id++){
+    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    let rest = await fetch(url);
+    let pokemon = await rest.json();
+    this.pokemons.push(pokemon);
+    }
   }
-
 }

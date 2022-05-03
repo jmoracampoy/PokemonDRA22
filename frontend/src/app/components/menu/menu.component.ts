@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  rutaLogo = "./assets/pokeballC.png";
-  isDimmed = true
   constructor() { }
 
   ngOnInit(): void {
