@@ -28,7 +28,181 @@
 
     <div class="pokemons__pokemon-content" id="pokemonContent">
       <div *ngFor="let pokemon of pokemons; index as indice" class="pokemon">
-        <div class="img-container">
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'fire'"
+          style="background-color: #ffa05d"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'grass'"
+          style="background-color: #8fd594"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'electric'"
+          style="background-color: #ffe43b"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'water'"
+          style="background-color: #7e97c0"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'ground'"
+          style="background-color: #caac4d"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'rock'"
+          style="background-color: #90642d"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'poison'"
+          style="background-color: #9d5b9b"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'bug'"
+          style="background-color: #eafd71"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'dragon'"
+          style="background-color: #97b3e6"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'psychic'"
+          style="background-color: #9d5b9b"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'flying'"
+          style="background-color: #cdcdcd"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'fighting'"
+          style="background-color: #ff5d5d"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'normal'"
+          style="background-color: #ffffff"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'ghost'"
+          style="background-color: #2e2e7d"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'fairy'"
+          style="background-color: #fcb1e7"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'ice'"
+          style="background-color: #84e0f5"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'dark'"
+          style="background-color: #2c2e2e"
+        >
+          <img
+            src="{{ pokemon.sprites.front_default }}"
+            alt="{{ pokemon.forms[0].name }}"
+          />
+        </div>
+        <div
+          class="img-container"
+          *ngIf="pokemon.types[0].type.name == 'steel'"
+          style="background-color: #a0a3a3"
+        >
           <img
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"

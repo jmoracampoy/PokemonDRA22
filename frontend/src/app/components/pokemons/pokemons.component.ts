@@ -9,30 +9,19 @@ import { Pokemon } from 'src/app/models/pokemon';
 })
 export class PokemonsComponent implements OnInit {
 
-  /*Colores tipo pokemon*/
-    colors = {
-      fire: '#FFA05D',
-      grass: '#8FD594',
-      electric: '#FFE43B',
-      water: '#7E97C0',
-      ground: '#CAAC4D',
-      rock: '#90642D',
-      poison: '#9D5B9B',
-      bug: '#EAFD71',
-      dragon: '#97b3e6',
-      psychic: '#FF96B5',
-      flying: '#CDCDCD',
-      fighting: '#FF5D5D',
-      normal: '#FFFFFF'
-    };
-
-   tipos_pokemon = Object.keys(this.colors);
-
     pokemons:any[] = [];
-    pokemonGen=[{"generacion": 1,"inicio":1,"fin":151},
+    pokemonGen=[
+    {"generacion": 1,"inicio":1,"fin":151},
     {"generacion": 2,"inicio":152,"fin":251},
-    {"generacion": 3,"inicio":252,"fin":386}];
+    {"generacion": 3,"inicio":252,"fin":386},
+    {"generacion": 4,"inicio":387,"fin":493},
+    {"generacion": 5,"inicio":494,"fin":649},
+    {"generacion": 6,"inicio":650,"fin":721},
+    {"generacion": 7,"inicio":722,"fin":809},
+    {"generacion": 8,"inicio":810,"fin":898}
+    ];
     numeroGen:number = 0;
+    backgroundPokemons:string[] = [];
 
   constructor(private pokemonService:PokemonService) { }
 
@@ -51,7 +40,7 @@ export class PokemonsComponent implements OnInit {
   }
 
   public async cambiarGeneracion1(){
-    if(this.numeroGen < this.pokemonGen.length - 1){
+    if(this.numeroGen < this.pokemonGen.length-1){
       this.pokemons = [];
       this.numeroGen++;
       console.log(this.numeroGen);
@@ -60,6 +49,7 @@ export class PokemonsComponent implements OnInit {
       let rest = await fetch(url);
       let pokemon = await rest.json();
       this.pokemons.push(pokemon);
+
       }
     }
   }
@@ -74,8 +64,6 @@ export class PokemonsComponent implements OnInit {
       let pokemon = await rest.json();
       this.pokemons.push(pokemon);
       }
-    }else{
-      console.log(this.numeroGen);
     }
   }
 }
