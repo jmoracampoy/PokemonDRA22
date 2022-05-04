@@ -27,31 +27,55 @@ export class PokemonsComponent implements OnInit {
     };
 
    tipos_pokemon = Object.keys(this.colors);
-   pokemonGen = {
-    1:[1, 151],
-    2:[152,251],
-    3:[252, 386]
-  };
 
-   numeroGen = 1;
-   generacion:number[] = this.pokemonGen[1];
-   inicioGeneracion:number = this.generacion[0];
-   finGeneracion: number = this.generacion[1];
-   pokemons:any[] = [];
-
+    pokemons:any[] = [];
+    pokemonGen=[{"generacion": 1,"inicio":1,"fin":151},
+    {"generacion": 2,"inicio":152,"fin":251},
+    {"generacion": 3,"inicio":252,"fin":386}];
+    numeroGen:number = 0;
 
   constructor(private pokemonService:PokemonService) { }
 
   ngOnInit(): void {
-    this.getPokemon();
+    this.getPokemons(this.numeroGen);
   }
 
-  async getPokemon(){
-    for(let id = this.inicioGeneracion;id<=this.finGeneracion;id++){
+  public async getPokemons(gen: number){
+
+    for(let id = this.pokemonGen[gen].inicio;id<=this.pokemonGen[gen].fin;id++){
     let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     let rest = await fetch(url);
     let pokemon = await rest.json();
     this.pokemons.push(pokemon);
+    }
+  }
+
+  public async cambiarGeneracion1(){
+    if(this.numeroGen < this.pokemonGen.length - 1){
+      this.pokemons = [];
+      this.numeroGen++;
+      console.log(this.numeroGen);
+    for(let id = this.pokemonGen[this.numeroGen].inicio;id<=this.pokemonGen[this.numeroGen].fin;id++){
+      let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+      let rest = await fetch(url);
+      let pokemon = await rest.json();
+      this.pokemons.push(pokemon);
+      }
+    }
+  }
+
+  public async cambiarGeneracion2(){
+    if(this.numeroGen != 0){
+      this.pokemons = [];
+      this.numeroGen--;
+    for(let id = this.pokemonGen[this.numeroGen].inicio;id<=this.pokemonGen[this.numeroGen].fin;id++){
+      let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+      let rest = await fetch(url);
+      let pokemon = await rest.json();
+      this.pokemons.push(pokemon);
+      }
+    }else{
+      console.log(this.numeroGen);
     }
   }
 }

@@ -12,9 +12,17 @@
       </div>
 
       <div class="pokemons__header-aline">
-        <div class="arrow-left" id="arrow-left"></div>
-        <div class="order" id="textGen">Gen {{ this.numeroGen }}</div>
-        <div class="arrow-right" id="arrow-right"></div>
+        <div
+          class="arrow-left"
+          id="arrow-left"
+          (click)="cambiarGeneracion2()"
+        ></div>
+        <div class="order" id="textGen">Gen {{ this.numeroGen + 1 }}</div>
+        <div
+          class="arrow-right"
+          id="arrow-right"
+          (click)="cambiarGeneracion1()"
+        ></div>
       </div>
     </div>
 
@@ -29,7 +37,9 @@
         <div class="info">
           <span class="number">#{{ pokemon.id }}</span>
           <h3 class="name">{{ pokemon.forms[0].name | uppercase }}</h3>
-          <small class="type">Tipo: <span></span></small>
+          <small *ngFor="let tipo of pokemon.types" class="type">
+            <span>{{ tipo.type.name }} </span>
+          </small>
         </div>
       </div>
     </div>
