@@ -9,6 +9,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class CreateTeamComponent implements OnInit {
 
   pokemons:any[] = [];
+  pokemonsTeam:any[]=[];
     pokemonGen=[
     {"generacion": 1,"inicio":1,"fin":151},
     {"generacion": 2,"inicio":152,"fin":251},
@@ -63,6 +64,13 @@ export class CreateTeamComponent implements OnInit {
       let pokemon = await rest.json();
       this.pokemons.push(pokemon);
       }
+    }
+  }
+
+  public addPokemonTeam(id:any){
+    if(this.pokemonsTeam.length<6){
+    this.pokemonsTeam.push(this.pokemons[id]);
+    console.log(this.pokemonsTeam);
     }
   }
 
