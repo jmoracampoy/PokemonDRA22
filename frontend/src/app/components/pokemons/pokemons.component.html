@@ -211,6 +211,8 @@
         <div class="info">
           <span class="number">#{{ pokemon.id }}</span>
           <h3 class="name">{{ pokemon.forms[0].name | uppercase }}</h3>
+          <small><strong>Type</strong></small>
+          <br />
           <small *ngFor="let tipo of pokemon.types" class="type">
             <span>{{ tipo.type.name }} </span>
           </small>

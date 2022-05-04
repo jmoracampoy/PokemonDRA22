@@ -20,8 +20,9 @@ export class PokemonsComponent implements OnInit {
     {"generacion": 7,"inicio":722,"fin":809},
     {"generacion": 8,"inicio":810,"fin":898}
     ];
+
+    /**Primera generación por defecto */
     numeroGen:number = 0;
-    backgroundPokemons:string[] = [];
 
   constructor(private pokemonService:PokemonService) { }
 
@@ -43,7 +44,6 @@ export class PokemonsComponent implements OnInit {
     if(this.numeroGen < this.pokemonGen.length-1){
       this.pokemons = [];
       this.numeroGen++;
-      console.log(this.numeroGen);
     for(let id = this.pokemonGen[this.numeroGen].inicio;id<=this.pokemonGen[this.numeroGen].fin;id++){
       let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
       let rest = await fetch(url);

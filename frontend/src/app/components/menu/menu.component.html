@@ -2,13 +2,17 @@
 <html lang="es">
   <header id="cabecera">
     <div class="caja">
-      <a href=""><img src="./assets/pokemons.png" alt="pokemons" /></a>
+      <a href=""><img src="./assets/bestTeams.png" alt="pokemons" /></a>
     </div>
     <div id="logo">
-      <img src="./assets/pokeballC.png" alt="logoPokeball" />
+      <a [routerLink]="['/pokemons']"
+        ><img src="./assets/pokeballC.png" alt="logoPokeball"
+      /></a>
     </div>
     <div class="caja">
-      <a href=""><img src="./assets/teams.png" alt="teams" /></a>
+      <a [routerLink]="['/teams']"
+        ><img src="./assets/teams.png" alt="teams"
+      /></a>
     </div>
   </header>
 </html>
