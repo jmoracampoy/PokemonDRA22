@@ -70,8 +70,11 @@ export class CreateTeamComponent implements OnInit {
   public addPokemonTeam(id:any){
     if(this.pokemonsTeam.length<6){
     this.pokemonsTeam.push(this.pokemons[id]);
-    console.log(this.pokemonsTeam);
     }
+  }
+
+  public resetPokemonTeam(){
+    this.pokemonsTeam = [];
   }
 
 }

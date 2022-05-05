@@ -4,7 +4,7 @@
     <div class="title">
       <img src="./assets/create.png" alt="cretae your team" />
     </div>
-    <div *ngIf="pokemonsTeam.length == 0" class="team-section">
+    <div class="team-section">
       <img src="./assets/addPokemon.png" alt="" />
       <img
         src="./assets/add-button.png"
@@ -14,44 +14,105 @@
         style="margin-left: 5px"
       />
     </div>
-    <div *ngIf="pokemonsTeam.length > 0" class="team-section">
+    <div class="team-section">
       <div class="team-container">
+        <img src="./assets/team.png" alt="" />
+        <img
+          class="reset"
+          src="./assets/reiniciar.png"
+          alt=""
+          (click)="resetPokemonTeam()"
+        />
         <div class="team">
-          <div *ngIf="pokemonsTeam[0] != null" class="pokemon-team">
-            <img src="{{ pokemonsTeam[0].sprites.front_default }}" alt="" />
-            <h3 class="name">
+          <div class="pokemon-team">
+            <img
+              *ngIf="pokemonsTeam.length < 1"
+              src="./assets/signo-de-interrogacion.png"
+              alt=""
+            />
+            <img
+              *ngIf="pokemonsTeam[0] != null"
+              src="{{ pokemonsTeam[0].sprites.front_default }}"
+              alt=""
+            />
+            <h3 *ngIf="pokemonsTeam[0] != null" class="name">
               {{ pokemonsTeam[0].forms[0].name | uppercase }}
             </h3>
           </div>
-          <div *ngIf="pokemonsTeam[1] != null" class="pokemon-team">
-            <img src="{{ pokemonsTeam[1].sprites.front_default }}" alt="" />
-            <h3 class="name">
+          <div class="pokemon-team">
+            <img
+              *ngIf="pokemonsTeam.length < 2"
+              src="./assets/signo-de-interrogacion.png"
+              alt=""
+            />
+            <img
+              *ngIf="pokemonsTeam[1] != null"
+              src="{{ pokemonsTeam[1].sprites.front_default }}"
+              alt=""
+            />
+            <h3 *ngIf="pokemonsTeam[1] != null" class="name">
               {{ pokemonsTeam[1].forms[0].name | uppercase }}
             </h3>
           </div>
-          <div *ngIf="pokemonsTeam[2] != null" class="pokemon-team">
-            <img src="{{ pokemonsTeam[2].sprites.front_default }}" alt="" />
-            <h3 class="name">
+          <div class="pokemon-team">
+            <img
+              *ngIf="pokemonsTeam.length < 3"
+              src="./assets/signo-de-interrogacion.png"
+              alt=""
+            />
+            <img
+              *ngIf="pokemonsTeam[2] != null"
+              src="{{ pokemonsTeam[2].sprites.front_default }}"
+              alt=""
+            />
+            <h3 *ngIf="pokemonsTeam[2] != null" class="name">
               {{ pokemonsTeam[2].forms[0].name | uppercase }}
             </h3>
           </div>
         </div>
         <div class="team">
-          <div *ngIf="pokemonsTeam[3] != null" class="pokemon-team">
-            <img src="{{ pokemonsTeam[3].sprites.front_default }}" alt="" />
-            <h3 class="name">
+          <div class="pokemon-team">
+            <img
+              *ngIf="pokemonsTeam.length < 4"
+              src="./assets/signo-de-interrogacion.png"
+              alt=""
+            />
+            <img
+              *ngIf="pokemonsTeam[3] != null"
+              src="{{ pokemonsTeam[3].sprites.front_default }}"
+              alt=""
+            />
+            <h3 *ngIf="pokemonsTeam[3] != null" class="name">
               {{ pokemonsTeam[3].forms[0].name | uppercase }}
             </h3>
           </div>
-          <div *ngIf="pokemonsTeam[4] != null" class="pokemon-team">
-            <img src="{{ pokemonsTeam[4].sprites.front_default }}" alt="" />
-            <h3 class="name">
+          <div class="pokemon-team">
+            <img
+              *ngIf="pokemonsTeam.length < 5"
+              src="./assets/signo-de-interrogacion.png"
+              alt=""
+            />
+            <img
+              *ngIf="pokemonsTeam[4] != null"
+              src="{{ pokemonsTeam[4].sprites.front_default }}"
+              alt=""
+            />
+            <h3 *ngIf="pokemonsTeam[4] != null" class="name">
               {{ pokemonsTeam[4].forms[0].name | uppercase }}
             </h3>
           </div>
-          <div *ngIf="pokemonsTeam[5] != null" class="pokemon-team">
-            <img src="{{ pokemonsTeam[5].sprites.front_default }}" alt="" />
-            <h3 class="name">
+          <div class="pokemon-team">
+            <img
+              *ngIf="pokemonsTeam.length < 6"
+              src="./assets/signo-de-interrogacion.png"
+              alt=""
+            />
+            <img
+              *ngIf="pokemonsTeam[5] != null"
+              src="{{ pokemonsTeam[5].sprites.front_default }}"
+              alt=""
+            />
+            <h3 *ngIf="pokemonsTeam[5] != null" class="name">
               {{ pokemonsTeam[5].forms[0].name | uppercase }}
             </h3>
           </div>
@@ -66,7 +127,7 @@
           *ngIf="pokemonsTeam.length == 6"
           src="./assets/pokebola.png"
           alt=""
-          style="width: 30px; height: 30px; margin-left: 90%; cursor: pointer"
+          class="pokebola"
         />
       </div>
     </div>

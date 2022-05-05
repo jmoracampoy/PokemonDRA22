@@ -42,6 +42,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  padding-top: 30px;
 }
 .pokemon-team{
   width: 150px;
@@ -49,6 +50,51 @@
   text-align: center;
 }
 
+
+.pokebola{
+  width: 30px;
+  height: 30px;
+  margin-left: 90%;
+  cursor: pointer;
+}
+
+.pokebola:hover{
+  animation-name: pokebola;
+  animation-duration: 2s;
+}
+
+@keyframes pokebola {
+  0%{
+  transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.reset{
+  width:40px;
+  height:40px;
+  margin-left: 90%;
+  cursor: pointer;
+}
+
+.reset:hover{
+  animation-name: resetear;
+  animation-duration: 3s;
+}
+
+@keyframes resetear {
+  0%{
+    transform: rotate(0deg);
+    }
+    50%{
+      transform: rotate(-45deg);
+    }
+    100%{
+      transform: rotate(0deg);
+    }
+}
 
 img{
   max-width: 60%
