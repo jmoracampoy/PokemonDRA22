@@ -223,18 +223,18 @@
           />
           <div class="img-container">
             <img
-              src="{{ pokemonSearch[0].sprites.front_default }}"
-              alt="{{ pokemonSearch[0].forms[0].name }}"
+              src="{{ pokemonSearch[0]?.sprites.front_default }}"
+              alt="{{ pokemonSearch[0]?.forms[0].name }}"
             />
           </div>
           <div class="info">
-            <span class="number">#{{ pokemonSearch[0].id }}</span>
+            <span class="number">#{{ pokemonSearch[0]?.id }}</span>
             <h3 class="name">
-              {{ pokemonSearch[0].forms[0].name | uppercase }}
+              {{ pokemonSearch[0]?.forms[0].name | uppercase }}
             </h3>
             <small><strong>Type</strong></small>
             <br />
-            <small *ngFor="let tipo of pokemonSearch[0].types" class="type">
+            <small *ngFor="let tipo of pokemonSearch[0]?.types" class="type">
               <span>{{ tipo.type.name }} </span>
             </small>
           </div>

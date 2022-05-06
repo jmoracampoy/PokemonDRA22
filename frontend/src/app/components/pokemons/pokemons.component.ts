@@ -35,7 +35,7 @@ export class PokemonsComponent implements OnInit {
 
   public async getPokemons(gen: number){
 
-    for(let id = this.pokemonGen[gen].inicio;id<=this.pokemonGen[gen].fin;id++){
+    for(let id = this.pokemonGen[this.numeroGen].inicio;id<=this.pokemonGen[this.numeroGen].fin;id++){
     let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     let rest = await fetch(url);
     let pokemon = await rest.json();
@@ -82,7 +82,8 @@ export class PokemonsComponent implements OnInit {
   let url = `https://pokeapi.co/api/v2/pokemon/${pokeSearchLower}`;
   let rest = await fetch(url);
   let pokemon = await rest.json();
+  this.search = true;
   this.pokemonSearch.push(pokemon);
+  }
  }
-}
 }
