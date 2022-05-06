@@ -10,6 +10,9 @@ export class CreateTeamComponent implements OnInit {
 
   pokemons:any[] = [];
   pokemonsTeam:any[]=[];
+  pokemonSearch:any[] = [];
+  pokemonSearchForm:string ="";
+  search = false;
     pokemonGen=[
     {"generacion": 1,"inicio":1,"fin":151},
     {"generacion": 2,"inicio":152,"fin":251},
@@ -76,5 +79,22 @@ export class CreateTeamComponent implements OnInit {
   public resetPokemonTeam(){
     this.pokemonsTeam = [];
   }
+
+  exitSearch(){
+    this.pokemonSearch=[];
+    this.search = false;
+  }
+ public async searchPokemon(){
+  if(this.pokemonSearchForm != ""){
+  this.search = true;
+  let pokeSearch = this.pokemonSearchForm.trim();
+  let pokeSearchLower = pokeSearch.toLowerCase();
+  this.pokemonSearch=[];
+  let url = `https://pokeapi.co/api/v2/pokemon/${pokeSearchLower}`;
+  let rest = await fetch(url);
+  let pokemon = await rest.json();
+  this.pokemonSearch.push(pokemon);
+ }
+}
 
 }

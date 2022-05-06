@@ -10,6 +10,9 @@ import { Pokemon } from 'src/app/models/pokemon';
 export class PokemonsComponent implements OnInit {
 
     pokemons:any[] = [];
+    pokemonSearch:any[] = [];
+    pokemonSearchForm:string ="";
+    search = false;
     pokemonGen=[
     {"generacion": 1,"inicio":1,"fin":151},
     {"generacion": 2,"inicio":152,"fin":251},
@@ -66,4 +69,20 @@ export class PokemonsComponent implements OnInit {
       }
     }
   }
+    exitSearch(){
+    this.pokemonSearch=[];
+    this.search = false;
+  }
+ public async searchPokemon(){
+  if(this.pokemonSearchForm != ""){
+  this.search = true;
+  let pokeSearch = this.pokemonSearchForm.trim();
+  let pokeSearchLower = pokeSearch.toLowerCase();
+  this.pokemonSearch=[];
+  let url = `https://pokeapi.co/api/v2/pokemon/${pokeSearchLower}`;
+  let rest = await fetch(url);
+  let pokemon = await rest.json();
+  this.pokemonSearch.push(pokemon);
+ }
+}
 }

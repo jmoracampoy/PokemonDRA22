@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TeamsComponent } from './components/teams/teams.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,8 @@ import { CreateTeamComponent } from './components/create-team/create-team.compon
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
