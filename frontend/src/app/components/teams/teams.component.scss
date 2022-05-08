@@ -6,7 +6,43 @@ body{
   width: 90%;
   margin: 0 auto;
   margin-top: 1px;
-  min-height: 450px;
+  min-height: 500px;
+}
+.teams{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+}
+
+.team{
+width: 100%;
+background-color: #eee;
+border-radius: 20px;
+box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+margin: 20px;
+padding: 20px;
+text-align: center;
+}
+
+.pokemon-content{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: center;
+  width: 100%;
+
+}
+.pokemon{
+  padding: 30px;
+}
+
+.remove{
+  width: 30px;
+  height: 30px;
+  margin-left: 95%;
+  cursor: pointer;
 }
 
 /*Boton crear equipo*/

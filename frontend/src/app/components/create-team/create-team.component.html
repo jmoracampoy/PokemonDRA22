@@ -162,7 +162,13 @@
         <div *ngIf="pokemonsTeam.length == 6" class="pokemons__header-search">
           <form action="" id="searchPokemon">
             <label for="nombre">Team name: </label>
-            <input type="text" id="pokemon" />
+            <input
+              type="text"
+              id="pokemon"
+              name="teamname"
+              #teamname="ngModel"
+              [(ngModel)]="teamName"
+            />
           </form>
         </div>
         <img
@@ -170,6 +176,7 @@
           src="./assets/pokebola.png"
           alt=""
           class="pokebola"
+          (click)="saveTeam()"
         />
       </div>
     </div>

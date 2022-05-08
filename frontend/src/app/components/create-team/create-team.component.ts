@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from 'src/app/models/team';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -11,6 +12,9 @@ export class CreateTeamComponent implements OnInit {
   pokemons:any[] = [];
   pokemonsTeam:any[]=[];
   pokemonSearch:any[] = [];
+  teamName:string="";
+  pokemonsDatabase:number[] = [];
+  team = { "name": this.teamName, "pokemons": this.pokemonsDatabase } as unknown as Team;
   pokemonSearchForm:string ="";
   search = false;
     pokemonGen=[
@@ -73,17 +77,29 @@ export class CreateTeamComponent implements OnInit {
   public addPokemonTeam(id:any){
     if(this.pokemonsTeam.length<6){
     this.pokemonsTeam.push(this.pokemons[id]);
+    this.team.pokemons.push(this.pokemons[id].id);
     }
+  }
+
+  public saveTeam(){
+    this.team.name = this.teamName;
+    this.pokemonService.saveTeam(this.team).subscribe(data=>{
+      this.pokemonsTeam=[];
+      this.team.name="";
+      this.team.pokemons=[];
+    });
   }
 
   public resetPokemonTeam(){
     this.pokemonsTeam = [];
+    this.team.pokemons =[];
   }
 
   exitSearch(){
     this.pokemonSearch=[];
     this.search = false;
   }
+
  public async searchPokemon(){
   if(this.pokemonSearchForm != ""){
   this.search = true;

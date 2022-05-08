@@ -17,6 +17,32 @@
           </div>
         </div>
       </div>
+      <div class="teams">
+        <div *ngFor="let team of pokemons; index as indice" class="team">
+          <img
+            class="remove"
+            src="./assets/remove.png"
+            alt=""
+            (click)="deleteTeam(indice)"
+          />
+          <h2>{{ team.name }}</h2>
+          <div class="pokemon-content">
+            <div *ngFor="let pokemon of team.pokemons" class="pokemon">
+              <img src="{{ pokemon.sprites.front_default }}" alt="" />
+              <h3>
+                {{ pokemon.forms[0].name | uppercase }}
+              </h3>
+              <div>
+                <small><strong>Type</strong></small>
+                <br />
+                <small *ngFor="let tipo of pokemon.types" class="type">
+                  <span>{{ tipo.type.name }} </span>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
