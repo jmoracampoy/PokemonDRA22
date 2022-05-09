@@ -18,6 +18,9 @@
         </div>
       </div>
       <div class="teams">
+        <div *ngIf="pokemons.length == 0" class="team">
+          <h2>You don't have any team create</h2>
+        </div>
         <div *ngFor="let team of pokemons; index as indice" class="team">
           <img
             class="remove"
