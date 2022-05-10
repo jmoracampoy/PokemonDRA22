@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import data from '../../scraping/Scraping.json';
 
 @Component({
   selector: 'app-legendary',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LegendaryComponent implements OnInit {
 
+  pokemons:any[] = [];
   constructor() { }
 
   ngOnInit(): void {
+    this.loadJson();
+  }
+
+  loadJson(){
+    this.pokemons = data;
   }
 
 }

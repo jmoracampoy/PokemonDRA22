@@ -1,1 +1,7 @@
-<p>legendary works!</p>
+<div class="container">
+  <div *ngFor="let pokemon of pokemons" class="pokemon">
+    <h3>{{ pokemon.nombre }}</h3>
+    <img src="{{ pokemon.imagen }}" alt="" />
+    <p>{{ pokemon.descripcion }}</p>
+  </div>
+</div>
