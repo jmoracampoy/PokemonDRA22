@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TeamsComponent } from './components/teams/teams.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LegendaryComponent } from './components/legendary/legendary.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     PokemonsComponent,
     TeamsComponent,
-    CreateTeamComponent
+    CreateTeamComponent,
+    LegendaryComponent
   ],
   imports: [
     BrowserModule,
