@@ -25,17 +25,17 @@ export class PokemonService {
 
    /*Guardar un equipo en la base de datos*/
    saveTeam(team:Team):Observable<any>{
-    return this.http.post('http://localhost:8080/api/teams',team,this.httpOptions);
+    return this.http.post('http://localhost:8081/api/teams',team,this.httpOptions);
    }
 
    /**Obtener los equipos pokemons */
    getTeams():Observable<any>{
-     return this.http.get('http://localhost:8080/api/teams',this.httpOptions)
+     return this.http.get('http://localhost:8081/api/teams',this.httpOptions)
    }
 
    /**Eliminar un equipo pokemon */
    deleteTeam(id:number):Observable<any>{
-     return this.http.delete('http://localhost:8080/api/teams/' + id,this.httpOptions);
+     return this.http.delete('http://localhost:8081/api/teams/' + id,this.httpOptions);
    }
 
 

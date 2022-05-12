@@ -247,7 +247,12 @@
           </div>
         </div>
       </div>
-      <div *ngFor="let pokemon of pokemons; index as indice" class="pokemon">
+      <div
+        *ngFor="let pokemon of pokemons; index as indice"
+        id="cart_pokemon"
+        index
+        class="pokemon"
+      >
         <img
           id="add-button"
           src="./assets/add-button.png"

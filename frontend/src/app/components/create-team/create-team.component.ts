@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Team } from 'src/app/models/team';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-create-team',
@@ -39,7 +40,7 @@ export class CreateTeamComponent implements OnInit {
 
   public async getPokemons(gen: number){
 
-    for(let id = this.pokemonGen[gen].inicio;id<=this.pokemonGen[gen].fin;id++){
+    for(let id = this.pokemonGen[gen].inicio;id<=3;id++){
     let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     let rest = await fetch(url);
     let pokemon = await rest.json();
@@ -74,10 +75,20 @@ export class CreateTeamComponent implements OnInit {
     }
   }
 
+   removeItemFromArr ( arr:any[], item:any ) {
+    var i = arr.indexOf( item );
+
+    if ( i !== -1 ) {
+        arr.splice( i, 1 );
+    }
+}
+
   public addPokemonTeam(id:any){
     if(this.pokemonsTeam.length<6){
     this.pokemonsTeam.push(this.pokemons[id]);
     this.team.pokemons.push(this.pokemons[id].id);
+    this.removeItemFromArr(this.pokemons,this.pokemons[id]);
+
     }
   }
 
@@ -93,6 +104,8 @@ export class CreateTeamComponent implements OnInit {
   public resetPokemonTeam(){
     this.pokemonsTeam = [];
     this.team.pokemons =[];
+    this.pokemons = [];
+    this.getPokemons(this.numeroGen);
   }
 
   exitSearch(){
