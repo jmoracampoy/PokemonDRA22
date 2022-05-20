@@ -29,7 +29,9 @@ export class TeamsComponent implements OnInit {
 
   public deleteTeam(indice:number){
     this.pokemonService.deleteTeam(this.pokemons[indice].id).subscribe(data=>{
-      window.location.reload()});
+    this.teams = [];
+    this.pokemons=[];
+     this.getTeams()});
 
   }
 

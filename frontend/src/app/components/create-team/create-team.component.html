@@ -247,12 +247,7 @@
           </div>
         </div>
       </div>
-      <div
-        *ngFor="let pokemon of pokemons; index as indice"
-        id="cart_pokemon"
-        index
-        class="pokemon"
-      >
+      <div *ngFor="let pokemon of pokemons; index as indice" class="pokemon">
         <img
           id="add-button"
           src="./assets/add-button.png"
@@ -265,6 +260,7 @@
           style="background-color: #ffa05d"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -275,6 +271,7 @@
           style="background-color: #8fd594"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -285,6 +282,7 @@
           style="background-color: #ffe43b"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -295,6 +293,7 @@
           style="background-color: #7e97c0"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -305,6 +304,7 @@
           style="background-color: #caac4d"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -315,6 +315,7 @@
           style="background-color: #90642d"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -325,6 +326,7 @@
           style="background-color: #9d5b9b"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -335,6 +337,7 @@
           style="background-color: #eafd71"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -345,6 +348,7 @@
           style="background-color: #97b3e6"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -355,6 +359,7 @@
           style="background-color: #9d5b9b"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -365,6 +370,7 @@
           style="background-color: #cdcdcd"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -375,6 +381,7 @@
           style="background-color: #ff5d5d"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -385,6 +392,7 @@
           style="background-color: #ffffff"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -395,6 +403,7 @@
           style="background-color: #2e2e7d"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -405,6 +414,7 @@
           style="background-color: #fcb1e7"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -415,6 +425,7 @@
           style="background-color: #84e0f5"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -425,6 +436,7 @@
           style="background-color: #2c2e2e"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />
@@ -435,6 +447,7 @@
           style="background-color: #a0a3a3"
         >
           <img
+            [routerLink]="['/details/', pokemon.id]"
             src="{{ pokemon.sprites.front_default }}"
             alt="{{ pokemon.forms[0].name }}"
           />

@@ -17,6 +17,7 @@ export class LegendaryComponent implements OnInit {
 
   loadJson(){
     this.pokemons = data;
+
   }
 
 }

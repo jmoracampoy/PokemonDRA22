@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Team } from 'src/app/models/team';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import * as $ from "jquery";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-team',
@@ -32,7 +33,7 @@ export class CreateTeamComponent implements OnInit {
     /**Primera generación por defecto */
     numeroGen:number = 0;
 
-  constructor(private pokemonService:PokemonService) { }
+  constructor(  private _router:Router, private pokemonService:PokemonService) { }
 
   ngOnInit(): void {
     this.getPokemons(this.numeroGen);
@@ -40,7 +41,7 @@ export class CreateTeamComponent implements OnInit {
 
   public async getPokemons(gen: number){
 
-    for(let id = this.pokemonGen[gen].inicio;id<=3;id++){
+    for(let id = this.pokemonGen[gen].inicio;id<=this.pokemonGen[gen].fin;id++){
     let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     let rest = await fetch(url);
     let pokemon = await rest.json();

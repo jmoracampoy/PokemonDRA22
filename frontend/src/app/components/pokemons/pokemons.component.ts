@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 
@@ -27,7 +28,7 @@ export class PokemonsComponent implements OnInit {
     /**Primera generación por defecto */
     numeroGen:number = 0;
 
-  constructor(private pokemonService:PokemonService) { }
+  constructor(private _router: Router,private pokemonService:PokemonService) { }
 
   ngOnInit(): void {
     this.getPokemons(this.numeroGen);
@@ -35,7 +36,7 @@ export class PokemonsComponent implements OnInit {
 
   public async getPokemons(gen: number){
 
-    for(let id = this.pokemonGen[this.numeroGen].inicio;id<=this.pokemonGen[this.numeroGen].fin;id++){
+    for(let id = this.pokemonGen[gen].inicio;id<=this.pokemonGen[gen].fin;id++){
     let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     let rest = await fetch(url);
     let pokemon = await rest.json();
@@ -86,4 +87,5 @@ export class PokemonsComponent implements OnInit {
   this.pokemonSearch.push(pokemon);
   }
  }
+
 }

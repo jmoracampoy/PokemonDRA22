@@ -1,0 +1,22 @@
+<div class="pokemons-container">
+  <div class="pokemon-details">
+    <div class="stats">
+      <div *ngFor="let stat of pokemon[0].stats" class="stat">
+        <div class="stat-name">
+          <label for="name">{{ stat.stat.name | uppercase }}</label>
+        </div>
+        <div class="stat-score">
+          <label for="score">{{ stat.base_stat }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="pokemon">
+      <div class="img-pokemon">
+        <img src="{{ pokemon[0].sprites.front_default }}" alt="" />
+      </div>
+      <div class="name-pokemon">
+        <label for="name">{{ pokemon[0].name | uppercase }}</label>
+      </div>
+    </div>
+  </div>
+</div>
